@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Snesh's bakery </title>
+
+    <style>
+
+    /*for HTML view*/
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        
+    }
+    
+
+    /*navigation bar*/
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:rgb(236, 162, 26);
+        padding: 10px 20px;
+    }
+
+    /* Logo */
+    .navbar img {
+        height: 60px;
+    }
+
+
+    /* Style for the burger icon */
+    .menu-icon {
+        display: none; /* Hide on larger screens */
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+    }
+
+
+    /* Style for the navigation menu */
+    .menu {
+        list-style: none;
+        display: flex;
+    }
+
+    .menu a {
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        font-weight:bold;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        text-decoration: none;
+    }
+    
+    .menu li {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+
+    .menu ul {
+        float:right;
+        display: flex;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+
+    .menu a.active {
+        background:white ;
+        color:purple;
+        border-radius: 6px;    
+    }
+
+    .menu a:hover{
+        background-color: rgb(0,0,0,0.7);
+        border-radius: 6px; 
+        border-radius: 30px;
+    }  
+
+
+    /* For screens up to 768px width */
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: flex;
+        }
+  
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: purple;
+            z-index: 1;
+            padding: 10px 0;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: #fff;
+        }
+    }
+
+    
+    .form-container {
+            background-color: #0a919b;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-left:25%;
+            box-sizing: border-box;
+            
+            
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #08d;
+            color: #eee;
+            border: 0;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            border-radius: 12px;
+            font-size: 18px;
+            height: 50px;
+            margin-top: 38px;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Add some spacing between buttons */
+            margin-top: 20px; /* Add margin to separate buttons from form inputs */
+        }
+
+        /* Additional style for checkboxes */
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    
+    
+</style>
+</head>
+
+    <body>
+    <!--navigation bar-->
+    <nav class="navbar">
+        <a href="home.html"><img src="images/logo.jfif" alt="Bakery Logo" class="img"></a>
+        
+        <!--menu icon-->
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!--links for navigation menu-->
+        <ul class="menu" id="menu">
+                <li><a href ="home.html"> Home</a></li>
+                <li><a href ="about_us.html"> About Us</a></li>
+                <li><a href ="our_work.html"> Our Work</a></li>
+                <li><a href ="products.html"> Our Products</a></li>
+                <li><a class ="active" href ="orders.html"> Orders</a></li> 
+                <li><a href ="events.html"> Events</a></li> 
+                   
+        </ul>
+    </nav>
+
+
+    <h1 style ="text-align:center;"> Place your order: </h1>
+    <br>
+    
+
+        <div class="form-container">
+        
+            <h2>Fill in the form to order</h2>
+            <form id="myForm">
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Cnum">Cellphone Number:</label>
+                    <input type="text" id="Cnum" name="Cnum" required>
+                    <p id="phoneValidationMessage" style="color: red;"></p>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Select your order:</label>
+                    <br>
+                    <input type="checkbox" id="order1" name="order1">
+                    <label for="order1">Bread</label>
+    
+                    <input type="checkbox" id="order2" name="order2">
+                    <label for="order2">Scones</label>
+    
+                    <input type="checkbox" id="order3" name="order3">
+                    <label for="order3">Doughnuts</label>
+    
+                    <input type="checkbox" id="order4" name="order4">
+                    <label for="order4">Croissants</label>
+                    
+                    <h4>Upload your file here</h4>
+                    <input type="file" id="inFile">
+
+                   <!--second file--> 
+                    <h1>File Upload Example</h1>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" name="file" id="fileInput">
+                        <button type="button" onclick="uploadFile()">Upload</button>
+                    </form>
+                    <div id="status"></div>
+
+                    <br>
+                </div>
+    
+                <div class="form-group">
+                    <label for="subject">Specify your orders below:</label>
+                    <textarea id="subject" name="subject" placeholder="List all your items that you wish to order" style="height: 100px;"></textarea>
+                </div>
+    
+                <div class="button-container">
+                    <button type="button" id="submitBtn">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <p style="text-align: center;">&copy; 2023 Snesh's Bakery. All rights reserved.</p>
+    <p style="text-align: center;">To find out more, call us on: <a href="tel:+2711 526 9965">+27 11 526 9965</a></p>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Order Submitted!</h2>
+            <p>Your order has been successfully submitted. Thank you!</p>
+        </div>
+    </div>
+    
+    <script>
+        //below is the code for Javascript
+        
+            // menu icons
+            const menuIcon = document.getElementById("menu-icon");
+            const menu = document.getElementById("menu");
+            
+            //menu API, pressing icon to view menu
+            menuIcon.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+            
+            //menu API, closing menu
+            window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                menu.classList.remove("active");
+                }
+            });
+
+
+            document.getElementById("submitBtn").addEventListener("click", function () {
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var Cnum = document.getElementById('Cnum').value;
+            var email = document.getElementById('email').value;
+
+            // Regular expression for a valid email format
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            // Regular expression for a valid 10-digit cellphone number
+            var phonePattern = /^\d{10}$/;
+
+            // Check if the first name is empty
+            if (fname === "") {
+                alert("First Name must not be empty.");
+                return; // Prevent further execution
+            }
+
+            // Check if the last name is empty
+            if (lname === "") {
+                alert("Last Name must not be empty.");
+                return; // Prevent further execution
+            }
+
+            // Check if the cellphone number is empty or doesn't match the pattern
+            if (Cnum === "" || !Cnum.match(phonePattern)) {
+                document.getElementById('phoneValidationMessage').innerText = "Please enter a valid 10-digit cellphone number.";
+                return; // Prevent further execution
+            } else {
+                document.getElementById('phoneValidationMessage').innerText = ""; // Clear validation message
+            }
+
+            // Check if the email is empty or doesn't match the pattern
+            if (email === "" || !email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return; // Prevent further execution
+            }
+
+            // Check if at least one order is selected
+            var order1 = document.getElementById('order1').checked;
+            var order2 = document.getElementById('order2').checked;
+            var order3 = document.getElementById('order3').checked;
+            var order4 = document.getElementById('order4').checked;
+
+            if (!order1 && !order2 && !order3 && !order4) {
+                alert("Please select at least one item to order.");
+                return; // Prevent further execution
+            }
+
+            // If all validations pass, allow the form to be submitted
+            alert("Form submitted"); // Display a pop-up message
+            document.getElementById("myForm").submit();
+        });
+            
+        // const myForm = document.getElementById("myForm");
+        // const inpFile = document.getElementById("inpFile");
+
+        // myForm.addEventListener.getElementById("submit", e => {
+        //     e.preventDefault();
+
+        //     const endpoint = "upload.php";
+        //     const forData = new formData();
+
+        //     formData.apend("inpFile".inpFile.file[0]);
+
+        //     fetch(endpoint,{
+
+        //         method: "post",
+        //         body: formData
+            
+        //     }).catch(console.error)
+        // })
+       
+        function uploadFile() {
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append("file", file);
+
+                fetch("upload.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(result => {
+                    document.getElementById("status").textContent = result;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+            }
+        }
+
+
+        
+        </script>
+    </body>
+</html>

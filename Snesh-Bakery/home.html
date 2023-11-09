@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Start of Async Drift Code -->
+<script>
+    "use strict";
+    
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('7iikdnpb787m');
+    </script>
+    <!-- End of Async Drift Code -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Snesh's bakery </title>
+    <style>
+    
+    /*for HTML view*/
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    
+
+    /*navigation bar*/
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:rgb(61, 111, 145);
+        padding: 10px 20px;
+    }
+
+    /* Logo */
+    .navbar img {
+        height: 60px;
+    }
+
+
+    /* Style for the burger icon */
+    .menu-icon {
+        display: none; /* Hide on larger screens */
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+    }
+
+
+    /* Style for the navigation menu */
+    .menu {
+        list-style: none;
+        display: flex;
+    }
+
+    .menu a {
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        font-weight:bold;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        text-decoration: none;
+    }
+    
+    .menu li {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+
+    .menu ul {
+        float:right;
+        display: flex;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+
+    .menu a.active {
+        background:rgb(255, 255, 255) ;
+        color:purple;
+        border-radius: 6px;    
+    }
+
+    .menu a:hover{
+        background:rgba(0, 0, 0, 0.7);
+        border-radius: 6px; 
+        border-radius: 30px;
+    }  
+
+
+    /* For screens up to 768px width */
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: flex;
+        }
+  
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: purple;
+            z-index: 1;
+            padding: 10px 0;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: #fff;
+        }
+    }
+
+
+    /*everything below is for the image grid */
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+    div.gallery:hover {
+        border: 1px solid #e90808;
+        background-color:rgba(67, 239, 248, 0.774);
+    }
+    
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .responsive {
+        width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+/*everything above is image grid*/
+
+
+
+
+</style>
+</head>
+
+
+
+<body>
+    <!--navigation bar-->
+    <nav class="navbar">
+        <a href="home.html"><img src="images/logo.jfif" alt="Bakery Logo" class="img"></a>
+        
+        <!--menu icon-->
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!--links for navigation menu-->
+        <ul class="menu" id="menu">
+                <li><a class ="active" href ="#"> Home</a></li>
+                <li><a href ="about_us.html"> About Us</a></li>
+                <li><a href ="our_work.html"> Our Work</a></li>
+                <li><a href ="products.html"> Our Products</a></li>
+                <li><a href ="orders.html"> Orders</a></li>    
+                <li><a href ="events.html"> Events</a></li>
+        </ul>
+    </nav>
+        
+    <!--Headings-->    
+    <h1 style ="text-align:center;"> WELCOME TO SNESH'S BAKERY </h1>
+    <h3 style = "text-align:center;"> Snesh's Bakery specializes in a variety of freshly baked products: </h3>
+    <br>
+
+    <!--Image grid-->
+    <div class = "responsive">
+        <div class="gallery">
+            <a href="products.html#Types of Bread">
+                <img src="images/loaf.jpg" alt="Loaf of Bread">
+            </a>
+            <div class="desc">Freshly baked bread</div>
+        </div>
+    </div>
+
+    <!--Image grid 2-->
+    <div class = "responsive">
+        <div class="gallery">
+            <a href="products.html#Types of scones">
+                <img src="images/biscuits.jfif" alt="Biscuit">
+            </a>
+            <div class="desc">Fluffy Scones</div>
+        </div>
+    </div>
+
+    <!--Image grid 3-->
+    <div class = "responsive">
+        <div class="gallery">
+            <a href="products.html#Types of doughnuts">
+                <img src="images/donut.jpg" alt="Doughnuts">
+            </a>
+            <div class="desc">Doughnuts</div>
+        </div>
+    </div>
+
+    <!--Image grid 4-->
+    <div class = "responsive">
+        <div class="gallery">
+            <a href="products.html#Types of Croissants">
+                <img src="images/cross.webp" alt="Croissant">
+            </a>
+            <div class="desc">Cheesy Croissants</div>
+        </div>
+    </div>
+
+
+
+    
+
+
+
+<script>
+//below is the code for Javascript
+
+    // menu icons
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+    
+    //menu API, pressing icon to view menu
+    menuIcon.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+    
+    //menu API, closing menu
+    window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        menu.classList.remove("active");
+        }
+    });
+   
+    
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+/*for HTML view*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(200, 244, 250);
+}
+
+/*navigation bar*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(61, 111, 145);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* Logo */
+.navbar img {
+    height: 60px;
+    border-radius: 20px;
+}
+
+
+/* Style for the burger icon */
+.menu-icon {
+    display: none; /* Hide on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+
+/* Style for the navigation menu */
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu a {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-weight:bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.menu li {
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.menu ul {
+    float:right;
+    display: flex;
+}
+
+.menu ul li {
+    display: inline-block;
+}
+
+
+.menu a.active {
+    background:white ;
+    color:purple;
+    border-radius: 6px;
+}
+
+.menu a:hover{
+    background-color:rgba(0,0,0,0.7);
+    border-radius: 6px; 
+    border-radius: 30px;
+}  
+
+/* For screens up to 768px width */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: purple;
+        z-index: 1;
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .menu a {
+        color: #fff;
+    }
+}
+
+div.center{
+    text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+color: #f2f2f2;
+font-size: 15px;
+padding: 8px 12px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+
+
+
+.event-header {
+        background-color: #f3c072;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+        border-radius: 30px;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .event-header h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+
+    .event-details {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .event-details img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .event-description {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+
+    .event-info {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .event-info p {
+        margin: 0;
+    }
+    
+
+  /*register form*/
+
+.form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+max-width: 800px;
+background-color: #ff90c7;
+padding: 20px;
+border-radius: 20px;
+position:relative;
+
+
+}
+
+.title {
+font-size: 28px;
+color: royalblue;
+font-weight: 600;
+letter-spacing: -1px;
+position: relative;
+display: flex;
+align-items: center;
+padding-left: 30px;
+}
+
+.title::before,.title::after {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+border-radius: 50%;
+left: 0px;
+background-color: royalblue;
+}
+
+.title::before {
+width: 18px;
+height: 18px;
+background-color: royalblue;
+}
+
+.title::after {
+width: 18px;
+height: 18px;
+animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+color: rgba(88, 87, 87, 0.822);
+font-size: 14px;
+}
+
+.signin {
+text-align: center;
+}
+
+.signin a {
+color: royalblue;
+}
+
+.signin a:hover {
+text-decoration: underline royalblue;
+}
+
+.flex {
+display: flex;
+flex-direction: column;
+width: 100%;
+gap: 10px;
+}
+
+.form label {
+position: relative;
+}
+
+.form label .input {
+width: 100%;
+padding: 10px 10px 20px 10px;
+outline: 0;
+border: 1px solid rgba(105, 105, 105, 0.397);
+border-radius: 10px;
+}
+
+.form label .input + span {
+position: absolute;
+left: 10px;
+top: 15px;
+color: grey;
+font-size: 0.9em;
+cursor: text;
+transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+top: 15px;
+font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+top: 30px;
+font-size: 0.7em;
+font-weight: 600;
+}
+
+.form label .input:valid + span {
+color: green;
+}
+
+.submit {
+border: none;
+outline: none;
+background-color: royalblue;
+padding: 10px;
+border-radius: 10px;
+color: #fff;
+font-size: 16px;
+transform: .3s ease;
+}
+
+.submit:hover {
+background-color: rgb(90, 255, 75);
+}
+
+@keyframes pulse {
+from {
+transform: scale(0.9);
+opacity: 1;
+}
+
+to {
+transform: scale(1.8);
+opacity: 0;
+}
+}
+
+    
+.cookie-card {
+  max-width: 320px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+  display: none; /* Initially hide the cookie card */
+  animation: fadeInOut 0.5s ease-in-out; /* Add animation */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.title {
+font-weight: 600;
+color: rgb(31 41 55);
+}
+
+.description {
+margin-top: 1rem;
+font-size: 0.875rem;
+line-height: 1.25rem;
+color: rgb(75 85 99);
+}
+
+.description a {
+--tw-text-opacity: 1;
+color: rgb(59 130 246);
+}
+
+.description a:hover {
+-webkit-text-decoration-line: underline;
+text-decoration-line: underline;
+}
+
+.actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 1rem;
+-moz-column-gap: 1rem;
+column-gap: 1rem;
+flex-shrink: 0;
+}
+
+.pref {
+font-size: 0.75rem;
+line-height: 1rem;
+color: rgb(31 41 55 );
+-webkit-text-decoration-line: underline;
+text-decoration-line: underline;
+transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+border: none;
+background-color: transparent;
+}
+
+.pref:hover {
+color: rgb(156 163 175);
+}
+
+.pref:focus {
+outline: 2px solid transparent;
+outline-offset: 2px;
+}
+
+.accept {
+font-size: 0.75rem;
+line-height: 1rem;
+background-color: rgb(17 24 39);
+font-weight: 500;
+border-radius: 0.5rem;
+color: #fff;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0.625rem;
+padding-bottom: 0.625rem;
+border: none;
+transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accept:hover {
+background-color: rgb(55 65 81);
+}
+
+.accept:focus {
+outline: 2px solid transparent;
+outline-offset: 2px;
+}
+
+
+
+/* popup*/
+
+.modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        max-width: 250px;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+
+
+    .modal button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: royalblue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
+
+
+
+    
+/*Map*/
+.container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center vertically */
+    justify-content: center;
+  }
+  
+  .map-details-container {
+    flex: 1; /* Expand to take available space */
+    margin-right: 20px; /* Add spacing between the iframe and text */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+  .our-text {
+    flex: 1; /* Expand to take available space */
+  }
+
+
+
+
+.game-header {
+  background-color: #f3c072;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+        border-radius: 30px;
+        max-width: 750px;
+        margin: 0 auto;
+}
+
+  
+  .map-header {
+  background-color: #ff90c7;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+        border-radius: 30px;
+        max-width: 750px;
+        margin: 0 auto;
+}
+.icon

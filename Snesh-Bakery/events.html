@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Snesh's bakery </title>
+    <link rel="stylesheet" href="styleEvent.css">
+</head>
+
+<body>
+        <!--navigation bar-->
+    <nav class="navbar">
+        <a href="home.html"><img src="images/gold muffin resized.jpg" alt="Bakery Logo" class="img"></a>
+        
+        <!--menu icon-->
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!--links for navigation menu-->
+        <ul class="menu" id="menu">
+                <li><a href ="home.html"> Home</a></li>
+                <li><a href ="about_us.html"> About Us</a></li>
+                <li><a href ="our_work.html"> our_work</a></li> 
+                <li><a href ="products.html"> Our Products</a></li>
+                <li><a href ="orders.html"> Orders</a></li> 
+                <li><a class ="active" href ="events.html"> Events</a></li>
+                   
+        </ul>
+    </nav>
+
+
+    <h1 style ="text-align: center;"> OUR UPCOMING EVENTS</h1>
+    <br>
+
+<br>
+
+
+
+
+<div class="map-header">
+    <img src="images/1-removebg-preview.png" width="400px">
+    <h1>New Recipe Tasting Event</h1>
+    <p>Date: October 15, 2023</p>
+    <p>Time: 2:00 PM - 5:00 PM</p>
+    <p>Location: Foodie Hall, Cape Town</p>
+</div>
+<br>
+
+
+
+<br>
+<br>
+    <div class="event-header">
+        <img src="images/cc-removebg-preview.png">
+        <h1>Event Information</h1>
+        <p><strong>Featured Dishes:</strong> A selection of gourmet appetizers, main courses, and desserts.</p>
+        <p><strong>Chefs:</strong> Chef John Doe, Chef Jane Smith</p>
+        <p><strong>Price:</strong> R30 per person</p>
+    </div>
+<br>
+<br>
+
+
+    
+            
+
+                  
+
+                             
+
+
+   <!-- Your existing HTML content -->
+   <div class="cookie-card" id="cookieCard">
+    <span class="title">🍪Cookie Notice</span>
+    <p class="description">We use cookies to ensure that we give you the best experience on our website. <a href="#">Read cookies policies</a>.</p>
+    <div class="actions">
+        <button class="pref">Manage your preferences</button>
+        <button class="accept" onclick="acceptCookies()">Accept</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal" id="successModal">
+    <img src="images/tick.jpg">
+    <h2>Registration Successful!</h2>
+    <p>Thank you for registering. We look forward to seeing you at the event.</p>
+    <button onclick="closeModal()">Close</button>
+</div>
+
+
+
+
+
+
+<div class="overlay" id="overlay"></div>
+
+<br>
+<br>
+
+<div class="map-header">
+<div class="container">
+  <div class="map-details-container">
+    <!-- Google Maps iframe embedded here -->
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.301561875189!2d18.45808437579908!3d-33.93337117320199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d08518ba1b9%3A0x1398e85e424f762!2s97%20Durham%20Ave%2C%20Salt%20River%2C%20Cape%20Town%2C%207925!5e0!3m2!1sen!2sza!4v1696499540733!5m2!1sen!2sza" width="500" height="550px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="our-text">
+    <!-- Location information -->
+    <article>
+      <img src="images/location-removebg-preview.png" alt="Location Icon" width="100px" height="110px"/>
+      <h3>Where to find us</h3>
+      <pre>
+97 Durham Ave, 
+Salt River,
+Cape Town,
+7925
+      </pre>
+    </article>
+
+    <!-- Hours of operation -->
+    <article>
+      <img src="images/time-removebg-preview.png" alt="Time Icon"  width="100px"/>
+      <h3>Our operating times</h3>
+      <p>Monday to Friday</p>
+      <p>08:00 - 17:00</p>
+      <p>Saturday to Sunday</p>
+      <p>09:00 - 14:00</p>
+    </article>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="game-header">
+    <h2>Click below to play our Checkers Game</h2>
+                      <br>
+    
+                      <a href="https://thedevscheckersgame.netlify.app/" target="_blank">
+                        <img src="./images/checkers_PNG19NEW.png" alt="Game" class="icon"  width="80" height="80">
+                      </a>
+    </div>
+  
+     
+
+  <script src="scriptEvent.js"></script>
+                      
+
+</body>
+</html>    

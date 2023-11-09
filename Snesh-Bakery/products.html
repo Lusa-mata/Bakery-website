@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Snesh's bakery </title>
+    <style>
+
+    /*for HTML view*/
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    
+
+    /*navigation bar*/
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:rgb(61, 111, 145);
+        padding: 10px 20px;
+    }
+
+    /* Logo */
+    .navbar img {
+        height: 60px;
+    }
+
+
+    /* Style for the burger icon */
+    .menu-icon {
+        display: none; /* Hide on larger screens */
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+    }
+
+
+    /* Style for the navigation menu */
+    .menu {
+        list-style: none;
+        display: flex;
+    }
+
+    .menu a {
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        font-weight:bold;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        text-decoration: none;
+    }
+    
+    .menu li {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+
+    .menu ul {
+        float:right;
+        display: flex;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+
+    .menu a.active {
+        background:white ;
+        color:purple;
+        border-radius: 6px;    
+    }
+
+    .menu a:hover{
+        background-color: rgb(0,0,0,0.7);
+        border-radius: 6px; 
+        border-radius: 30px;
+    }  
+
+
+    /* For screens up to 768px width */
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: flex;
+        }
+  
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: purple;
+            z-index: 1;
+            padding: 10px 0;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: #fff;
+        }
+    }
+
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+    
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .responsive {
+        width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .wrapper{
+        display: flex;
+    }
+
+    .center {
+        width: 50%;
+        display: block;
+    }
+
+    
+
+</style>
+</head>
+
+<body>
+        <!--navigation bar-->
+    <nav class="navbar">
+        <a href="home.html"><img src="images/logo.jfif" alt="Bakery Logo" class="img"></a>
+        
+        <!--menu icon-->
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!--links for navigation menu-->
+        <ul class="menu" id="menu">
+                <li><a href ="home.html"> Home</a></li>
+                <li><a href ="about_us.html"> About Us</a></li>
+                <li><a href ="our_work.html"> Our Work</a></li>
+                <li><a class ="active" href ="products.html"> Our Products</a></li>
+                <li><a href ="orders.html"> Orders</a></li>   
+                <li><a href ="events.html"> Events</a></li>  
+        </ul>
+    </nav>
+
+        
+    <fieldset> 
+    <h1 style ="text-align:center;" id="Types of Bread"> Types of bread </h1>
+    <br>
+    <br>
+    <br>
+    
+        <h2> Banana loaf bread </h2>
+        <div class="wrapper">
+        <img src="images/banana loaf bread.jfif" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <li> Our banana loaf bread is moist, delicious, and absolutely packed with banana flavor</li>
+            <li> This banana loaf bread is super moist thanks to butter, egg, and brown sugar </li>
+            <li> store the banana loaf bread properly to keep it moist for several days</li>
+        </ul>
+    </div>
+    <br>
+    
+
+    <h2> Wheat bread </h2>
+    <div class="wrapper">
+        <img src="images/wheat bread.jfif" style="width:350px;" height="250px">
+        <ul style="font-size: x-large;">
+            <br>
+            
+            <li>High in fibre and is packed with energy and long lasting freshness </li>
+            <li> The wholewheat offers your family that extra wheaty taste </li>
+            <li> The extra fibre keeps their digestive system systems working  </li>
+        </ul>
+    </div>
+    </fieldset>
+    <br>
+    
+
+    <fieldset>
+    <h1 style ="text-align:center;" id="Types of scones"> Types of scones </h1>
+    <br>
+    <br>
+    <br>
+    
+    <h2> Lemonade scones </h2>
+    <div class="wrapper">
+        <img src="images/Lemonade scones.jpg" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li>Lemonade Scones are the fastest and easiest scones you will ever make! </li>
+            <li>Incredibly fluffy, moist scones made from scratch.</li>
+            <li>Our secret ingredient is lemonade, which does not even taste like lemon. </li>
+        </ul>
+    </div>
+    <br>
+    
+    <h2> Buttermilk scones </h2>
+    <div class="wrapper">
+        <img src="images/buttermilk scones.jpeg" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li>This recipe provides you with some great sweet and savoury variations.</li>
+            <li>The acidity in the buttermilk adds tenderness to baked goods. </li>
+            <li>The tang of the buttermilk brings good flavour.</li>
+        </ul>
+    </div>
+    </fieldset>
+    <br>
+
+    <fieldset>
+    <h1 style ="text-align:center;" id="Types of doughnuts"> Types of doughnuts </h1>
+    <br>
+    <br>
+    <br>
+
+    <h2> Frosted doughnuts </h2>
+    <div class="wrapper">
+        <img src="images/donut.jpg" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li> Our doughnuts are typically made using cake doughnuts. </li>
+            <li> Which makes it capable to withstand a heavier layer of frosting as well as topping. </li>
+        </ul>
+    </div>
+    <br>
+
+    <br>
+    
+    <h2> Twist doughnuts </h2>
+    <div class="wrapper">
+        <img src="images/donuts-twist.jpg" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li>Our twisted doughnuts are made from yeasted dough</li> 
+            <li>They are fried and rolled in sugar </li>
+            <li>The sugar on the outside adds sweetness and bit of crunch.</li>
+        </ul>
+    </div>
+    </fieldset>
+    <br>
+
+
+    <fieldset>
+    <h1 style ="text-align:center;" id="Types of Croissants"> Types of Croissants </h1>
+    <br>
+    <br>
+    <br>
+
+    <h2> Chocolate Croissants </h2>
+    <div class="wrapper">
+        <img src="images/Choc croiss.jpg" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li> Layer upon layer of light, buttery flaky pastry filled with rich chocolate.  </li>
+            <li> Our crossiant makes a great breakfast treat and perfect for Sunday brunch. </li>
+            <li>With every bite , you're treated to a burst of melted chocolate!</li>
+        </ul>
+    </div>
+    <br>
+
+    
+    <h2> Raspberry rose lychee croissants </h2>
+    <div class="wrapper">
+        <img src="images/Raspberry rose lychee croissants.jfif" style="width:350px;" height="250px">
+        <ul style="font-size:x-large">
+            <br>
+            <br>
+            <li>Filled with a burst of fruit flavored raspberry</li>
+            <li>Cut in half horizontally, and then spread with a thick layer of raspberry </li>
+            <li>Raspberry rose lychee croissants have a beautiful pink coloring to them </li>
+        </ul>
+    </div>
+    </fieldset>
+
+    <script>
+        //below is the code for Javascript
+        
+            // menu icons
+            const menuIcon = document.getElementById("menu-icon");
+            const menu = document.getElementById("menu");
+            
+            //menu API, pressing icon to view menu
+            menuIcon.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+            
+            //menu API, closing menu
+            window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                menu.classList.remove("active");
+                }
+            });
+           
+            const image = document.getElementById('myImage');
+
+        image.addEventListener('click', function() {
+            // Add your JavaScript code here
+            // For example, you can open a new window, show an alert, etc.
+            alert('Image clicked!');
+        });
+
+  
+        </script>
+
+   
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
